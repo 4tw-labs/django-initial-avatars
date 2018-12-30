@@ -20,7 +20,7 @@ def get_initial_avatar(user_or_email, size=GRAVATAR_DEFAULT_SIZE, shape=AVATAR_S
         email = user_or_email
         try:
             user = get_user_model().objects.get(email=email)
-        except get_user_model.DoesNotExist:
+        except get_user_model().DoesNotExist:
             return mark_safe('<img src="" width="{width}" height="{height}"/>'.format(width=size, height=size))
 
     avatar_backend = get_avatar_backend()
