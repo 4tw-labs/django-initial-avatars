@@ -210,7 +210,7 @@ class AvatarGenerator(object):
         self.url = self.save_avatar(image)
         if AVATAR_HIGH_RESOLUTION:
             high_res_image = work_image.resize((self.size * 2, self.size * 2), resample=Image.BILINEAR)
-            self.high_res_url = self.save_avatar(high_res_image, high_res=True).decode('utf-8')
+            self.high_res_url = self.save_avatar(high_res_image, high_res=True)
         return self.url
 
     def save_avatar(self, image, high_res=False):
